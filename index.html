@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta property="og:title" content="Susana Merary Romero Benitez">
+<meta property="og:description" content="Industrial engineer, human factors researcher and English & Spanish teacher. From El Salvador to Indonesia.">
+<meta property="og:image" content="https://susanaromerob.github.io/photo.jpg">
+<meta property="og:url" content="https://susanaromerob.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23e07b24'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='bold' font-size='16' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<title>Susana Romero Benitez</title>
+<meta name="description" content="Susana Merary Romero Benitez: industrial engineer and researcher in human factors and occupational safety, and English and Spanish educator. From El Salvador to Indonesia.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Figtree:ital,wght@0,400;0,500;0,600;1,400&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a dive. The page is one long descent: hero at the sunlit surface, then a vertical timeline "dive line"
+   whose chapters tell her story in order. The background darkens with depth and a fixed depth gauge tracks scroll.
+   Single deliberate dark-ocean look (no light theme). */
+:root {
+  color-scheme: light;
+  --abyss: #f3fafd; --deep: #9fd3ea; --shallow: #f8dcb4;
+  --glow: #1d7fae; --sun: #e07b24; --coral: #e2574c;
+  --foam: #17344a; --mist: #4d6577;
+  --card: rgba(255, 255, 255, .8); --card-line: rgba(29, 127, 174, .2);
+  --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --sea: #fde3c2;
+  --glow-rgb: 29, 127, 174; --mist-rgb: 77, 101, 119; --foam-rgb: 23, 52, 74; --sun-rgb: 224, 123, 36; --coral-rgb: 226, 87, 76;
+  --card-rgb: 255, 255, 255; --line-rgb: 29, 127, 174; --abyss-rgb: 243, 250, 253; --ray-rgb: 255, 214, 150;
+  --sea-top: 253, 224, 186; --sea-bot: 196, 232, 248; --on-sun: #ffffff; --fx: bubbles;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+body {
+  margin: 0; background: var(--abyss); color: var(--foam);
+  font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.65;
+  overflow-x: hidden;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--abyss); }
+#sea { position: fixed; inset: 0; z-index: -2; background: linear-gradient(180deg, var(--sea) 0%, var(--abyss) 100%); transition: background-color .3s; }
+#fx { position: fixed; inset: 0; z-index: -1; width: 100%; height: 100%; pointer-events: none; }
+a { color: var(--glow); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--sun); outline-offset: 3px; border-radius: 6px; }
+h1, h2, h3 { font-family: var(--font-display); line-height: 1.08; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+.wrap {
+  max-width: 70rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.mono { font-family: var(--font-mono); font-size: .78rem; letter-spacing: .08em; text-transform: uppercase; color: var(--mist); }
+
+/* Reveal on scroll (only when motion is allowed and script runs) */
+.anim .rv { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); }
+.anim .rv.left { transform: translateX(-28px); }
+.anim .rv.zoom { transform: scale(.94); }
+.anim .rv.in { opacity: 1; transform: none; }
+.anim .rv.d1 { transition-delay: .08s; } .anim .rv.d2 { transition-delay: .16s; } .anim .rv.d3 { transition-delay: .24s; } .anim .rv.d4 { transition-delay: .32s; }
+
+/* Top nav */
+.nav { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; right: 0; z-index: 20; transition: background .3s, border-color .3s; border-bottom: 1px solid transparent; }
+.nav.solid { background: rgba(var(--abyss-rgb), .82); backdrop-filter: blur(10px); border-color: var(--card-line); }
+.nav .wrap { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: .8rem; }
+.brand { font-family: var(--font-display); font-weight: 600; color: var(--foam); text-decoration: none; letter-spacing: -.01em; }
+.brand b { color: var(--sun); }
+.nav ul { display: flex; gap: 1.3rem; list-style: none; margin: 0; padding: 0; }
+.nav ul a { color: var(--mist); text-decoration: none; font-size: .95rem; }
+.nav ul a:hover { color: var(--foam); }
+@media (max-width: 820px) { .nav ul { display: none; } }
+
+/* Depth gauge */
+.gauge { position: fixed; right: max(18px, env(safe-area-inset-right, 0px)); top: 50%; transform: translateY(-50%); z-index: 15; display: grid; justify-items: end; gap: .5rem; font-family: var(--font-mono); }
+.gauge .read { font-size: 1.5rem; color: var(--foam); font-variant-numeric: tabular-nums; }
+.gauge .read small { font-size: .7rem; color: var(--mist); margin-left: .2rem; }
+.gauge .bar { width: 3px; height: 34vh; background: rgba(var(--mist-rgb), .2); border-radius: 3px; position: relative; }
+.gauge .bar i { position: absolute; left: 0; right: 0; top: 0; height: var(--p, 0%); background: linear-gradient(var(--sun), var(--glow)); border-radius: 3px; }
+.gauge .lbl { font-size: .68rem; letter-spacing: .12em; color: var(--mist); text-transform: uppercase; max-width: 9rem; text-align: right; }
+@media (max-width: 1100px) { .gauge { display: none; } }
+.progress { position: fixed; top: env(safe-area-inset-top, 0px); left: 0; height: 3px; width: var(--p, 0%); background: linear-gradient(90deg, var(--sun), var(--glow)); z-index: 25; }
+
+/* Hero */
+.hero { min-height: min(100svh, 56rem); display: grid; align-items: center; padding-block: 6rem 4rem; position: relative; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, .75fr); gap: 3rem; align-items: center; }
+.hero .mono { color: var(--sun); }
+.hero h1 { font-size: clamp(2.8rem, 8vw, 6.2rem); font-weight: 800; letter-spacing: -.035em; margin: 1rem 0 1.4rem; }
+.hero h1 .thin { display: block; font-weight: 400; color: var(--mist); font-size: .42em; letter-spacing: -.01em; margin-top: .6rem; }
+.roles { display: flex; flex-wrap: wrap; gap: .6rem; margin-bottom: 1.6rem; }
+.roles span { border: 1px solid var(--card-line); background: rgba(var(--card-rgb), .45); padding: .35rem .9rem; border-radius: 999px; font-size: .95rem; }
+.hero p.lead { font-size: 1.25rem; max-width: 34rem; color: var(--foam); }
+.porthole { position: relative; width: min(100%, 22rem); aspect-ratio: 1; justify-self: center; max-width: 100%; }
+.porthole img { position: absolute; inset: 9%; width: 82%; height: 82%; object-fit: cover; object-position: center 30%; border-radius: 50%; }
+.porthole svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.porthole .spin { transform-origin: 50% 50%; animation: spin 40s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.cue { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: grid; justify-items: center; gap: .4rem; color: var(--mist); text-decoration: none; }
+.cue i { width: 1.4rem; height: 2.2rem; border: 1.5px solid var(--mist); border-radius: 1rem; position: relative; }
+.cue i::after { content: ""; position: absolute; left: 50%; top: .4rem; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--sun); animation: drop 1.8s ease-in-out infinite; }
+@keyframes drop { 0% { transform: translateY(0); opacity: 1 } 80% { transform: translateY(1rem); opacity: 0 } 100% { opacity: 0 } }
+@media (max-width: 820px) {
+  .hero { min-height: auto; padding-block: 5.5rem 4.5rem; }
+  .hero .wrap { grid-template-columns: 1fr; gap: 2rem; }
+  .porthole { width: 14rem; order: -1; justify-self: start; }
+  .cue { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .porthole .spin, .cue i::after { animation: none; } }
+
+/* Route El Salvador -> Indonesia */
+.route { padding-block: 4rem 2rem; }
+.route .wrap { display: grid; gap: 1.5rem; }
+.route h2 { font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 600; max-width: 40rem; letter-spacing: -.02em; }
+.route h2 em { font-style: normal; color: var(--sun); }
+.route .map { overflow-x: auto; }
+.route svg { width: 100%; height: auto; display: block; }
+.route .path { stroke-dasharray: 6 8; }
+.anim .route .draw { stroke-dashoffset: 1000; stroke-dasharray: 1000; transition: stroke-dashoffset 2.4s ease; }
+.anim .route .rv.in .draw, .route .draw { stroke-dashoffset: 0; }
+
+/* Timeline */
+.story { position: relative; padding-block: 2rem 4rem; }
+.line { position: absolute; left: calc(max(16px, env(safe-area-inset-left, 0px)) + 1.1rem); top: 0; bottom: 0; width: 2px; background: rgba(var(--mist-rgb), .16); }
+.line i { position: absolute; left: 0; right: 0; top: 0; height: var(--fill, 0%); background: linear-gradient(var(--sun), var(--glow) 40%, var(--coral)); box-shadow: 0 0 12px var(--glow); }
+.story-in { max-width: 70rem; margin: 0 auto; position: relative; }
+@media (min-width: 821px) { .line { left: 50%; } }
+
+.chapter { padding-block: 3.5rem; }
+.chapter .wrap { position: relative; }
+.chead { display: grid; gap: .7rem; max-width: 44rem; margin-bottom: 2rem; padding-left: 3rem; }
+.chead .mono b { color: var(--sun); font-weight: 500; }
+.chead h2 { font-size: clamp(2rem, 5.5vw, 3.6rem); font-weight: 800; letter-spacing: -.03em; }
+.chead p { color: var(--mist); font-size: 1.15rem; }
+.node { position: absolute; left: calc(1.1rem - 9px + 1px); top: .3rem; width: 18px; height: 18px; border-radius: 50%; background: var(--abyss); border: 2px solid var(--glow); box-shadow: 0 0 0 6px rgba(var(--glow-rgb), .12); }
+@media (min-width: 821px) {
+  .chead { padding-left: 0; margin-left: auto; margin-right: auto; text-align: center; justify-items: center; }
+  .node { left: calc(50% - 9px); top: -2.2rem; }
+}
+
+/* Moments: alternate sides on desktop */
+.moments { display: grid; gap: 1.5rem; padding-left: 3rem; }
+@media (min-width: 821px) {
+  .moments { padding-left: 0; grid-template-columns: 1fr 1fr; column-gap: 5rem; row-gap: 1.5rem; }
+  .moments > .m:nth-child(odd) { grid-column: 1; }
+  .moments > .m:nth-child(even) { grid-column: 2; margin-top: 4rem; }
+  .moments > .wide { grid-column: 1 / -1 !important; margin-top: 0 !important; }
+}
+.m { background: var(--card); border: 1px solid var(--card-line); border-radius: 16px; padding: 1.4rem 1.5rem; backdrop-filter: blur(6px); display: grid; gap: .6rem; min-width: 0; }
+.m .when { font-family: var(--font-mono); font-size: .8rem; color: var(--sun); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
+.m h3 { font-size: 1.35rem; font-weight: 600; letter-spacing: -.01em; }
+.m .where { color: var(--mist); font-size: .97rem; }
+.m ul { margin: .2rem 0 0; padding-left: 1.1rem; display: grid; gap: .35rem; }
+.m li::marker { color: var(--glow); }
+.m .learned { border-top: 1px dashed var(--card-line); padding-top: .7rem; font-size: .97rem; color: var(--foam); }
+.m .learned b { font-family: var(--font-mono); font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; color: var(--glow); font-weight: 500; display: block; margin-bottom: .15rem; }
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 820px) { .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.stat { border-left: 2px solid var(--glow); padding: .2rem 0 .2rem 1rem; }
+.stat strong { display: block; font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); font-weight: 800; line-height: 1; font-variant-numeric: tabular-nums; color: var(--foam); }
+.stat span { color: var(--mist); font-size: .92rem; }
+
+/* Publications */
+.pub { display: grid; gap: .35rem; padding: 1rem 0; border-top: 1px solid var(--card-line); }
+.pub:first-of-type { border-top: 0; }
+.pub cite { font-style: normal; font-weight: 600; font-family: var(--font-display); font-size: 1.15rem; }
+.pub .meta { color: var(--mist); font-size: .95rem; }
+.pub a { font-family: var(--font-mono); font-size: .8rem; overflow-wrap: anywhere; }
+
+/* Classrooms */
+.rooms { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 15rem), 1fr)); gap: 1rem; }
+.room { border-radius: 14px; overflow: hidden; background: var(--card); border: 1px solid var(--card-line); display: flex; flex-direction: column; }
+.room .ph { aspect-ratio: 4 / 3; max-width: 100%; position: relative; display: grid; place-items: center; color: var(--mist); font-family: var(--font-mono); font-size: .72rem; letter-spacing: .12em; text-transform: uppercase;
+  background: radial-gradient(120% 90% at 30% 20%, rgba(var(--sun-rgb), .25), transparent 60%), linear-gradient(160deg, var(--shallow), var(--deep)); }
+.room .ph::after { content: ""; position: absolute; inset: 10px; border: 1px dashed rgba(var(--foam-rgb), .25); border-radius: 8px; }
+.room .txt { padding: .9rem 1.1rem 1.1rem; display: grid; gap: .15rem; }
+.room strong { font-family: var(--font-display); font-weight: 600; }
+.room span { color: var(--mist); font-size: .93rem; }
+.room .n { font-family: var(--font-mono); color: var(--sun); font-size: .8rem; }
+
+/* Toolkit */
+.kit { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr)); gap: 1rem; }
+.kit .m h3 { font-size: 1.1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .4rem; }
+.chips span { font-size: .88rem; padding: .25rem .65rem; border-radius: 6px; background: rgba(var(--glow-rgb), .1); border: 1px solid rgba(var(--glow-rgb), .22); }
+.langs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+@media (max-width: 640px) { .langs { grid-template-columns: 1fr; } }
+.lang { display: grid; gap: .5rem; }
+.lang strong { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; }
+.lang .meter { height: 6px; background: rgba(var(--mist-rgb), .18); border-radius: 6px; overflow: hidden; }
+.lang .meter i { display: block; height: 100%; width: var(--w); background: linear-gradient(90deg, var(--glow), var(--sun)); border-radius: 6px; }
+.anim .lang .meter i { width: 0; transition: width 1.4s cubic-bezier(.2,.7,.2,1) .2s; }
+.anim .in .lang .meter i, .anim .lang.in .meter i { width: var(--w); }
+.lang span { color: var(--mist); font-size: .92rem; }
+
+/* Contact */
+.contact { padding-block: 5rem 6rem; text-align: center; }
+.contact .wrap { display: grid; justify-items: center; gap: 1.2rem; }
+.contact h2 { font-size: clamp(2.4rem, 7vw, 4.8rem); font-weight: 800; letter-spacing: -.03em; }
+.contact h2 span { color: var(--sun); }
+.contact p { color: var(--mist); max-width: 34rem; font-size: 1.15rem; }
+.links { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: .8rem; }
+.links a { display: inline-flex; align-items: center; gap: .5rem; padding: .7rem 1.2rem; border-radius: 999px; border: 1px solid var(--card-line); background: var(--card); color: var(--foam); text-decoration: none; font-weight: 500; transition: border-color .2s, transform .2s; }
+.links a:hover { border-color: var(--glow); transform: translateY(-2px); }
+.links a.primary { background: var(--sun); color: var(--on-sun); border-color: var(--sun); }
+.links .k { font-family: var(--font-mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; opacity: .7; }
+.social { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .3rem; }
+.social a { display: inline-grid; gap: .05rem; padding: .5rem .9rem; border-radius: 10px; background: rgba(var(--glow-rgb), .1); border: 1px solid rgba(var(--glow-rgb), .25); color: var(--foam); text-decoration: none; transition: border-color .2s, transform .2s; }
+.social a:hover { border-color: var(--glow); transform: translateY(-2px); }
+.social .k { font-family: var(--font-mono); font-size: .66rem; letter-spacing: .1em; text-transform: uppercase; color: var(--glow); }
+.cta { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: 1.6rem; }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 2.9rem; padding: .7rem 1.4rem; border-radius: 999px; font-weight: 600; text-decoration: none; border: 1.5px solid var(--sun); transition: transform .2s, box-shadow .2s; }
+.btn.primary { background: var(--sun); color: var(--on-sun); box-shadow: 0 6px 18px rgba(var(--sun-rgb), .3); }
+.btn.ghost { color: var(--foam); border-color: rgba(var(--foam-rgb), .3); background: rgba(var(--card-rgb), .6); }
+.btn:hover { transform: translateY(-2px); }
+@media (max-width: 640px) { .route .map { display: none; } .route { padding-block: 2.5rem 1rem; } }
+@media (max-width: 480px) { .btn { flex: 1 1 100%; } .hero h1 { font-size: 2.5rem; } .chead h2 { font-size: 2rem; } .m { padding: 1.15rem 1.1rem; } .moments, .chead { padding-left: 2.4rem; } .contact h2 { font-size: 2.3rem; } }
+footer { text-align: center; color: var(--mist); font-size: .85rem; padding-block: 0 2.5rem; font-family: var(--font-mono); }
+</style>
+<style>[hidden]{display:none!important} img{max-width:100%} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
+</head>
+<body>
+
+<div id="sea" aria-hidden="true"></div>
+<canvas id="fx" aria-hidden="true"></canvas>
+<div class="progress" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a class="brand" href="#top">Susana <b>Romero</b></a>
+    <ul>
+      <li><a href="#roots">Roots</a></li>
+      <li><a href="#indonesia">Indonesia</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#culture">Culture</a></li>
+      <li><a href="#toolkit">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<aside class="gauge" aria-hidden="true">
+  <div class="read"><span id="depth">0</span><small id="unit">m</small></div>
+  <div class="bar"><i></i></div>
+  <div class="lbl" id="where">Surface</div>
+</aside>
+
+<main id="top">
+  <section class="hero" data-zone="Surface">
+    <div class="wrap">
+      <div>
+        <div class="mono rv">Human factors · Safety · Education</div>
+        <h1 class="rv d1">Susana Merary Romero Benitez<span class="thin">I design safer ways for people to work, and I help people find their voice in a new language.</span></h1>
+        <div class="roles rv d2">
+          <span>Industrial engineer</span><span>Human factors researcher</span><span>English &amp; Spanish teacher</span>
+        </div>
+        <p class="lead rv d3">Born in El Salvador, shaped by my years in Indonesia. Scroll down and dive into my story.</p>
+        <div class="cta rv d4">
+          <a class="btn primary" href="Susana_Romero_Benitez_CV.pdf" download>Download CV</a>
+          <a class="btn ghost" href="#contact">Contact me</a>
+        </div>
+      </div>
+      <div class="porthole rv zoom d2">
+        <svg viewBox="0 0 200 200" aria-hidden="true">
+          <circle cx="100" cy="100" r="96" fill="none" style="stroke:var(--glow)" stroke-opacity=".35" stroke-width="1"/>
+          <g class="spin">
+            <circle cx="100" cy="100" r="90" fill="none" style="stroke:var(--sun)" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>
+          </g>
+          <circle cx="100" cy="4" r="3.5" style="fill:var(--sun)"/>
+          <circle cx="196" cy="100" r="3.5" style="fill:var(--glow)"/>
+          <circle cx="100" cy="196" r="3.5" style="fill:var(--glow)"/>
+          <circle cx="4" cy="100" r="3.5" style="fill:var(--glow)"/>
+        </svg>
+        <img src="photo.jpg" alt="Portrait of Susana Romero Benitez" width="640" height="678">
+      </div>
+    </div>
+    <a class="cue" href="#route"><i></i><span class="mono">Dive in</span></a>
+  </section>
+
+  <section class="route" id="route" data-zone="Crossing the Pacific">
+    <div class="wrap">
+      <h2 class="rv">From <em>San Miguel, El Salvador</em> to <em>Surabaya, Indonesia</em>: one ocean, two homes, three languages.</h2>
+      <div class="map rv d1">
+        <svg viewBox="0 0 800 220" role="img" aria-label="A dotted route across the Pacific Ocean from El Salvador to Indonesia">
+          <defs>
+            <linearGradient id="rg" x1="0" x2="1"><stop offset="0" style="stop-color:var(--sun)"/><stop offset="1" style="stop-color:var(--glow)"/></linearGradient>
+          </defs>
+          <path d="M40 150 Q 400 -20 760 140" fill="none" stroke="rgba(var(--mist-rgb), .25)" stroke-width="2" class="path"/>
+          <path d="M40 150 Q 400 -20 760 140" fill="none" stroke="url(#rg)" stroke-width="3" stroke-linecap="round" class="draw"/>
+          <circle cx="40" cy="150" r="8" style="fill:var(--sun)"/><circle cx="40" cy="150" r="16" fill="none" style="stroke:var(--sun)" stroke-opacity=".4"/>
+          <circle cx="760" cy="140" r="8" style="fill:var(--glow)"/><circle cx="760" cy="140" r="16" fill="none" style="stroke:var(--glow)" stroke-opacity=".4"/>
+          <text x="40" y="190" style="fill:var(--foam)" font-family="Bricolage Grotesque, sans-serif" font-size="20" font-weight="600">El Salvador</text>
+          <text x="40" y="210" style="fill:var(--mist)" font-family="JetBrains Mono, monospace" font-size="11">Where I grew up</text>
+          <text x="760" y="180" style="fill:var(--foam)" font-family="Bricolage Grotesque, sans-serif" font-size="20" font-weight="600" text-anchor="end">Indonesia</text>
+          <text x="760" y="200" style="fill:var(--mist)" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="end">Where I grew</text>
+          <text x="400" y="60" style="fill:var(--mist)" font-family="JetBrains Mono, monospace" font-size="12" text-anchor="middle" letter-spacing="2">PACIFIC OCEAN</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="story">
+    <div class="line" aria-hidden="true"><i></i></div>
+    <div class="story-in">
+
+      <section class="chapter" id="roots" data-zone="Ch. 1 · Roots">
+        <div class="wrap">
+          <span class="node rv zoom" aria-hidden="true"></span>
+          <header class="chead">
+            <div class="mono rv"><b>Chapter 1</b> · 2013 – 2021 · El Salvador</div>
+            <h2 class="rv d1">Where it all began</h2>
+            <p class="rv d2">A scholarship opened the door to English. Engineering taught me to see how systems, and the people inside them, really work.</p>
+          </header>
+          <div class="moments">
+            <article class="m rv left">
+              <div class="when">2013 – 2014</div>
+              <h3>English Access Microscholarship</h3>
+              <p class="where">U.S. Department of State, through Centro Cultural Salvadoreño Americano</p>
+              <p>My first real step into English, the language that later took me around the world.</p>
+            </article>
+            <article class="m rv d1">
+              <div class="when">2015 – 2021</div>
+              <h3>Bachelor of Engineering in Logistics and Customs</h3>
+              <p class="where">ITCA-FEPADE, La Unión · MEGATEC Government Scholarship · grade 8.7/10</p>
+              <p>Industrial safety, quality management, simulation, decision models and logistics systems design.</p>
+            </article>
+            <article class="m rv left">
+              <div class="when">2020 · Capstone research</div>
+              <h3>A logistics model for a real company</h3>
+              <p class="where">Comercial Biviana Elena, La Unión</p>
+              <p>Used observation, interviews, employee surveys, process mapping and a safety checklist to redesign purchasing, sales and warehousing, and helped specify a software prototype to support it.</p>
+              <p class="learned"><b>What I learned</b>Good design starts by watching and listening to the people who do the work.</p>
+            </article>
+            <article class="m rv d1">
+              <div class="when">2021 – 2023</div>
+              <h3>Customer Support Representative</h3>
+              <p class="where">Teleperformance · FedEx and AT&amp;T accounts</p>
+              <p>Helped customers in English with tracking, payments, troubleshooting and complaints in a fast-paced remote team.</p>
+              <p class="learned"><b>What I learned</b>Patience, clear explanations and calm problem-solving under pressure.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="indonesia" data-zone="Ch. 2 · Indonesia">
+        <div class="wrap">
+          <span class="node rv zoom" aria-hidden="true"></span>
+          <header class="chead">
+            <div class="mono rv"><b>Chapter 2</b> · 2020 – 2026 · Indonesia</div>
+            <h2 class="rv d1">Crossing the ocean</h2>
+            <p class="rv d2">I learned Indonesian city by city, then earned a government scholarship to do my master's in Surabaya.</p>
+          </header>
+          <div class="moments">
+            <article class="m rv left">
+              <div class="when">2020 – 2024</div>
+              <h3>Learning Indonesian</h3>
+              <p class="where">State University of Malang · Airlangga University · ITS FBICC · KNB ITS BIPA Program</p>
+              <p>From my first words in Malang to a UKBI language certificate in 2024.</p>
+            </article>
+            <article class="m rv d1">
+              <div class="when">2023 – 2026</div>
+              <h3>Master's in Industrial Engineering</h3>
+              <p class="where">Institut Teknologi Sepuluh Nopember (ITS), Surabaya · KNB Scholarship, Government of Indonesia</p>
+              <ul>
+                <li>Human Factors and Occupational Safety Engineering</li>
+                <li>GPA 3.46 / 4.00 · Thesis grade A</li>
+                <li>Human factors, safety systems, UI/UX design, research methods, advanced statistics, work systems design</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="research" data-zone="Ch. 3 · Research">
+        <div class="wrap">
+          <span class="node rv zoom" aria-hidden="true"></span>
+          <header class="chead">
+            <div class="mono rv"><b>Chapter 3</b> · 2024 – 2026 · Research</div>
+            <h2 class="rv d1">Going below the surface</h2>
+            <p class="rv d2">At Kenjeran Beach, fishermen dive breathing air through a hose from a compressor on their boat. I set out to make that work safer.</p>
+          </header>
+          <div class="moments">
+            <article class="m wide rv">
+              <div class="when">2025 – 2026 · Master's thesis</div>
+              <h3>A safety-support system for artisanal hookah divers</h3>
+              <p class="where">ITS and Kenjeran Beach, Surabaya · supervised by Retno Widyaningrum, Ph.D.</p>
+              <div class="stats" style="margin-block:.8rem">
+                <div class="stat"><strong data-count="8">8</strong><span>fishermen I spoke with in the field</span></div>
+                <div class="stat"><strong data-count="12" data-suffix=" × 12">12 × 12</strong><span>requirements × engineering characteristics</span></div>
+                <div class="stat"><strong data-count="4">4</strong><span>weighting scenarios, same ranking</span></div>
+                <div class="stat"><strong data-count="2">2</strong><span>peer-reviewed publications</span></div>
+              </div>
+              <ul>
+                <li>Observed the divers' work and turned field evidence, safety standards and dive-computer benchmarks into clear requirements.</li>
+                <li>Decided who gets which warning: a simple visual cue for the diver, and detailed status, a beeper and manual alarm for the attendant on the boat.</li>
+                <li>Used House of Quality, FMEA, decision matrices and traceability, and appraised the prototype built with the engineering firm Elmech.</li>
+              </ul>
+              <p class="learned"><b>What drives me</b>Technology should help people notice danger early and decide well, especially when an AI or a machine is giving advice.</p>
+            </article>
+            <article class="m rv left">
+              <div class="when">Peer-reviewed publications</div>
+              <div class="pub">
+                <cite>Development of a Safety-Support Prototype for Artisanal Hookah Divers</cite>
+                <p class="meta"><strong>Romero Benitez, S. M.</strong>, Widyaningrum, R., &amp; Nindira, A. G. (2026). <em>Energy: Jurnal Ilmiah Ilmu-Ilmu Teknik</em>, 16(2), 474–489.</p>
+                <a href="https://doi.org/10.51747/energy.v16i2.p474-489">doi.org/10.51747/energy.v16i2.p474-489</a>
+              </div>
+              <div class="pub">
+                <cite>Development of Creative Industries Based on Local Wisdom as a Driver of the Tourism Industry</cite>
+                <p class="meta">Wulansari, D., Sukatmadirerja, N., &amp; <strong>Romero Benitez, S. M.</strong> (2024). <em>Aplikasi Administrasi</em>, 27(2), 97–109.</p>
+                <a href="https://doi.org/10.30649/aamama.v27i2.265">doi.org/10.30649/aamama.v27i2.265</a>
+              </div>
+            </article>
+            <article class="m rv d1">
+              <div class="when">2024 – 2025 · Graduate projects</div>
+              <h3>Studying how people see, read and work</h3>
+              <ul>
+                <li><b>Eye tracking</b> to test how people read a guide map, with fixes for legend, colour and icons.</li>
+                <li><b>An accessible pharmacy website</b> for older adults, redesigned in Figma and usability tested.</li>
+                <li><b>A robotic coconut-tree climber</b> designed from field interviews and human-error analysis.</li>
+                <li><b>Ergonomic analysis</b> of textile roving operations.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="teaching" data-zone="Ch. 4 · Teaching">
+        <div class="wrap">
+          <span class="node rv zoom" aria-hidden="true"></span>
+          <header class="chead">
+            <div class="mono rv"><b>Chapter 4</b> · 2024 – today · Classrooms</div>
+            <h2 class="rv d1">Giving back in the classroom</h2>
+            <p class="rv d2">From children in Kediri to university students in Surabaya, I volunteered to help over 135 learners speak English with confidence.</p>
+          </header>
+          <div class="moments">
+            <div class="wide rv">
+              <div class="rooms">
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>Sanggar Alang-Alang</strong><span>NGO, Kediri</span><span class="n">25 children</span></div></div>
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>Universitas Nusantara PGRI Kediri</strong><span>With Aarons.english and Kampung Inggris Language Center</span><span class="n">30 university students</span></div></div>
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>LP3I</strong><span>Private university</span><span class="n">35 learners</span></div></div>
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>Voluntrip Lombok</strong><span>Lombok</span><span class="n">Teen groups of 15 – 25</span></div></div>
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>Universitas Hang Tuah</strong><span>Surabaya</span><span class="n">About 30 students</span></div></div>
+              </div>
+            </div>
+            <article class="m rv left">
+              <div class="when">2024 – 2025 · Volunteer</div>
+              <h3>English teacher and speaking facilitator</h3>
+              <p>I led speaking practice, cultural exchange and activities I prepared myself, so that shy students would raise their hands and try.</p>
+            </article>
+            <article class="m rv d1">
+              <div class="when">2024 – today · ESPAÑOLINDO</div>
+              <h3>Spanish tutor for Indonesian students</h3>
+              <p>Online lessons on Zoom for groups of around ten and one-to-one sessions. I explain Spanish grammar, pronunciation and everyday expressions in English, with materials I make myself.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="culture" data-zone="Ch. 5 · Culture">
+        <div class="wrap">
+          <span class="node rv zoom" aria-hidden="true"></span>
+          <header class="chead">
+            <div class="mono rv"><b>Chapter 5</b> · Both directions · El Salvador ⇄ Indonesia</div>
+            <h2 class="rv d1">A bridge between two cultures</h2>
+            <p class="rv d2">I carry El Salvador with me wherever I go, and I want the world to see the Indonesia I have come to love.</p>
+          </header>
+          <div class="moments">
+            <article class="m rv left">
+              <div class="when">El Salvador → Indonesia</div>
+              <h3>Sharing my country</h3>
+              <p>On many occasions in Indonesia I have worn the traditional Salvadoran dress and talked about my country: where it is, how we live, and what makes us proud.</p>
+              <div class="rooms" style="margin-top:.4rem">
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>In the Salvadoran dress</strong></div></div>
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>Presenting El Salvador</strong></div></div>
+              </div>
+            </article>
+            <article class="m rv d1">
+              <div class="when">Indonesia → the world</div>
+              <h3>Sharing my life in Indonesia</h3>
+              <p>On social media I share my student life, my everyday life in Indonesia and the people and places I discover, so that friends back home and around the world can see Indonesia through my eyes.</p>
+              <div class="rooms" style="margin-top:.4rem">
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>Student life</strong></div></div>
+                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>Everyday Indonesia</strong></div></div>
+              </div>
+              <div class="social">
+                <a href="https://www.instagram.com/zusiromero/"><span class="k">Instagram</span>@zusiromero</a>
+                <a href="https://www.tiktok.com/@suziromero"><span class="k">TikTok</span>@suziromero</a>
+                <a href="https://www.youtube.com/@susiromerosv"><span class="k">YouTube</span>@susiromerosv</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="chapter" id="toolkit" data-zone="Ch. 6 · Toolkit">
+        <div class="wrap">
+          <span class="node rv zoom" aria-hidden="true"></span>
+          <header class="chead">
+            <div class="mono rv"><b>Chapter 6</b> · What I bring</div>
+            <h2 class="rv d1">My toolkit</h2>
+            <p class="rv d2">Everything I've learned along the way, ready for the next project.</p>
+          </header>
+          <div class="moments">
+            <div class="wide m rv">
+              <div class="when">Languages</div>
+              <div class="langs">
+                <div class="lang"><strong>Spanish</strong><div class="meter"><i style="--w:100%"></i></div><span>Native</span></div>
+                <div class="lang"><strong>English</strong><div class="meter"><i style="--w:85%"></i></div><span>Professional · ITS EFL 537 (2026)</span></div>
+                <div class="lang"><strong>Indonesian</strong><div class="meter"><i style="--w:60%"></i></div><span>Conversational · UKBI 384 (2024)</span></div>
+              </div>
+            </div>
+            <div class="wide kit">
+              <div class="m rv"><h3>Research methods</h3><div class="chips"><span>Field observation</span><span>Interviews</span><span>Surveys</span><span>Human-centred design</span><span>Requirements &amp; traceability</span><span>Warning allocation</span><span>House of Quality</span><span>FMEA</span><span>Hazard analysis</span></div></div>
+              <div class="m rv d1"><h3>Human factors</h3><div class="chips"><span>Task analysis (HTA)</span><span>SHERPA</span><span>SAGAT</span><span>NASA-TLX</span><span>Usability testing</span><span>Accessibility</span><span>Eye tracking</span></div></div>
+              <div class="m rv d2"><h3>Teaching</h3><div class="chips"><span>Conversation practice</span><span>Lesson design</span><span>Teaching on Zoom</span><span>Group facilitation</span><span>Cross-cultural communication</span></div></div>
+              <div class="m rv d3"><h3>Tools</h3><div class="chips"><span>Figma</span><span>Gazepoint</span><span>Microsoft Office</span><span>Root-cause analysis</span><span>DMAIC</span><span>Process mapping</span></div></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+
+  <section class="contact" id="contact" data-zone="Contact">
+    <div class="wrap">
+      <div class="mono rv">The next chapter</div>
+      <h2 class="rv d1">Let's write it <span>together.</span></h2>
+      <p class="rv d2">I'm open to research, teaching and collaboration opportunities. Say hello.</p>
+      <div class="links rv d3">
+        <a class="primary" href="mailto:merarybtz@gmail.com"><span class="k">Email</span>merarybtz@gmail.com</a>
+        <a href="https://www.linkedin.com/in/susana-merary-romero-benitez-25a782347"><span class="k">in</span>LinkedIn</a>
+        <a href="https://orcid.org/0009-0001-1186-554X"><span class="k">iD</span>ORCID</a>
+        <a href="https://www.researchgate.net/profile/Susana-Merary-Romero-Benitez"><span class="k">RG</span>ResearchGate</a>
+        <a href="https://www.instagram.com/zusiromero/"><span class="k">IG</span>Instagram</a>
+        <a href="https://www.tiktok.com/@suziromero"><span class="k">TT</span>TikTok</a>
+        <a href="https://www.youtube.com/@susiromerosv"><span class="k">YT</span>YouTube</a>
+      </div>
+    </div>
+  </section>
+</main>
+<footer>© 2026 Susana Merary Romero Benitez</footer>
+
+<script>
+(function () {
+  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var root = document.documentElement;
+  var rvs = [].slice.call(document.querySelectorAll('.rv'));
+
+  // Reveal on scroll
+  if (!reduce && 'IntersectionObserver' in window) {
+    root.classList.add('anim');
+    var io = new IntersectionObserver(function (es) {
+      es.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -6% 0px' });
+    rvs.forEach(function (el) { io.observe(el); });
+    // safety net: never leave content hidden
+    setTimeout(function () { rvs.forEach(function (el) { var r = el.getBoundingClientRect(); if (r.top < innerHeight) el.classList.add('in'); }); }, 1200);
+  }
+
+  // Count-up numbers
+  if (!reduce && 'IntersectionObserver' in window) {
+    var cio = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (!e.isIntersecting) return;
+        var el = e.target, to = +el.dataset.count, suf = el.dataset.suffix || '', t0 = null;
+        function step(t) { if (!t0) t0 = t; var k = Math.min(1, (t - t0) / 1200); el.textContent = Math.round(to * (1 - Math.pow(1 - k, 3))) + suf; if (k < 1) requestAnimationFrame(step); }
+        requestAnimationFrame(step); cio.unobserve(el);
+      });
+    }, { threshold: 0.6 });
+    document.querySelectorAll('[data-count]').forEach(function (el) { cio.observe(el); });
+  }
+
+  // Scroll: sea colour, depth gauge, timeline fill, nav
+  var nav = document.getElementById('nav'), depth = document.getElementById('depth'), where = document.getElementById('where');
+  var bar = document.querySelector('.gauge .bar i'), prog = document.querySelector('.progress');
+  var line = document.querySelector('.line i'), story = document.querySelector('.story');
+  var zones = [].slice.call(document.querySelectorAll('[data-zone]'));
+  var cs = getComputedStyle(root); function rgb(n) { return cs.getPropertyValue(n).split(',').map(function (v) { return +v; }); }
+  var top = rgb('--sea-top'), bot = rgb('--sea-bot'); var FX = cs.getPropertyValue('--fx').trim() || 'bubbles';
+  var G = cs.getPropertyValue('--glow-rgb').trim(), F = cs.getPropertyValue('--foam-rgb').trim(), SUN = cs.getPropertyValue('--sun-rgb').trim(), RAY = cs.getPropertyValue('--ray-rgb').trim(), CO = (cs.getPropertyValue('--coral-rgb').trim() || '255,138,107');
+  if (FX !== 'bubbles' && FX !== 'fish') document.getElementById('unit').textContent = '';
+  var ticking = false;
+  function update() {
+    ticking = false;
+    var max = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    var p = Math.min(1, Math.max(0, scrollY / max));
+    var c = top.map(function (v, i) { return Math.round(v + (bot[i] - v) * p); });
+    root.style.setProperty('--sea', 'rgb(' + c.join(',') + ')');
+    depth.textContent = (FX === 'bubbles' || FX === 'fish') ? Math.round(p * 30) : Math.round(2013 + p * 13);
+    bar.style.setProperty('--p', (p * 100) + '%');
+    prog.style.setProperty('--p', (p * 100) + '%');
+    nav.classList.toggle('solid', scrollY > 40);
+    var r = story.getBoundingClientRect();
+    var f = Math.min(1, Math.max(0, (innerHeight * 0.6 - r.top) / r.height));
+    line.style.setProperty('--fill', (f * 100) + '%');
+    var cur = zones[0];
+    zones.forEach(function (z) { if (z.getBoundingClientRect().top < innerHeight * 0.45) cur = z; });
+    where.textContent = cur.dataset.zone;
+  }
+  addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
+  addEventListener('resize', update);
+  update();
+
+  // Background: rising bubbles, drifting particles and light rays near the surface
+  var cv = document.getElementById('fx'), ctx = cv.getContext('2d'), W, H, dpr;
+  function size() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
+  size(); addEventListener('resize', size);
+  var N = W < 700 ? 14 : 34, parts = [];
+  for (var i = 0; i < N; i++) parts.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 2.6 + .6, s: Math.random() * .5 + .15, w: Math.random() * Math.PI * 2, b: Math.random() < .35, f: Math.random() < .28 });
+  function draw(t) {
+    ctx.clearRect(0, 0, W, H);
+    var max = Math.max(1, document.documentElement.scrollHeight - innerHeight), p = Math.min(1, scrollY / max);
+    // light rays fade out as you go deeper
+    var ra = (W < 700 ? .05 : .08) * (1 - p * 1.6);
+    if (ra > 0) {
+      for (var k = 0; k < 5; k++) {
+        var x = W * (.15 + k * .19) + Math.sin(t / 3000 + k) * 40;
+        var g = ctx.createLinearGradient(0, 0, 0, H);
+        g.addColorStop(0, 'rgba(' + RAY + ',' + ra + ')'); g.addColorStop(1, 'rgba(' + RAY + ',0)');
+        ctx.fillStyle = g; ctx.beginPath(); ctx.moveTo(x - 30, 0); ctx.lineTo(x + 30, 0); ctx.lineTo(x + 160, H); ctx.lineTo(x - 40, H); ctx.closePath(); ctx.fill();
+      }
+    }
+    parts.forEach(function (q) {
+      if (FX === 'leaves') {
+        if (!reduce) { q.y += q.s * .7; q.w += .008; if (q.y > H + 20) { q.y = -20; q.x = Math.random() * W; } }
+        var lx = q.x + Math.sin(q.w) * 30, rot = Math.sin(q.w * 1.3) * 1.2 + q.r;
+        ctx.save(); ctx.translate(lx, q.y); ctx.rotate(rot);
+        ctx.fillStyle = 'rgba(' + G + ',' + (q.b ? .22 : .32) + ')';
+        ctx.beginPath(); ctx.ellipse(0, 0, 3 + q.r * 2.6, 1.4 + q.r, 0, 0, Math.PI * 2); ctx.fill();
+        ctx.strokeStyle = 'rgba(' + G + ',.4)'; ctx.lineWidth = .6; ctx.beginPath(); ctx.moveTo(-3 - q.r * 2.6, 0); ctx.lineTo(3 + q.r * 2.6, 0); ctx.stroke();
+        ctx.restore(); return;
+      }
+      if (FX === 'fish' && q.f) {
+        if (!q.d) { q.d = Math.random() < .5 ? 1 : -1; q.c = [CO, SUN, G][Math.floor(Math.random() * 3)]; }
+        if (!reduce) { q.x += q.d * q.s * 1.6; q.w += .03; if (q.x > W + 30) q.x = -30; if (q.x < -30) q.x = W + 30; }
+        var fy = q.y + Math.sin(q.w) * 4, L = 6 + q.r * 4;
+        ctx.save(); ctx.translate(q.x, fy); ctx.scale(q.d, 1); ctx.fillStyle = 'rgba(' + q.c + ',.4)';
+        ctx.beginPath(); ctx.ellipse(0, 0, L, L * .42, 0, 0, Math.PI * 2); ctx.fill();
+        ctx.beginPath(); ctx.moveTo(-L * .8, 0); ctx.lineTo(-L * 1.5, -L * .4 + Math.sin(q.w * 2) * 1.5); ctx.lineTo(-L * 1.5, L * .4 + Math.sin(q.w * 2) * 1.5); ctx.closePath(); ctx.fill();
+        ctx.restore(); return;
+      }
+      if (FX === 'fireflies') {
+        if (!reduce) { q.y -= q.s * .35; q.x += Math.cos(q.w) * .3; q.w += .012; if (q.y < -10) { q.y = H + 10; q.x = Math.random() * W; } }
+        if (q.b) { ctx.save(); ctx.translate(q.x, q.y); ctx.rotate(q.w); ctx.fillStyle = 'rgba(' + G + ',.18)'; ctx.beginPath(); ctx.ellipse(0, 0, 4 + q.r * 2.4, 1.6 + q.r, 0, 0, Math.PI * 2); ctx.fill(); ctx.restore(); return; }
+        var a = .35 + .55 * Math.abs(Math.sin(t / 900 + q.w * 3));
+        ctx.beginPath(); ctx.arc(q.x, q.y, q.r * .9, 0, Math.PI * 2); ctx.fillStyle = 'rgba(' + SUN + ',' + a + ')';
+        ctx.shadowColor = 'rgba(' + SUN + ',.9)'; ctx.shadowBlur = 10; ctx.fill(); ctx.shadowBlur = 0; return;
+      }
+      if (!reduce) { q.y -= q.s; q.w += .01; if (q.y < -10) { q.y = H + 10; q.x = Math.random() * W; } }
+      var x = q.x + Math.sin(q.w) * 8;
+      ctx.beginPath(); ctx.arc(x, q.y, q.r, 0, Math.PI * 2);
+      if (q.b) { ctx.strokeStyle = 'rgba(' + F + ',.35)'; ctx.lineWidth = 1; ctx.stroke(); }
+      else { ctx.fillStyle = 'rgba(' + G + ',' + (.25 + p * .45) + ')'; ctx.shadowColor = 'rgba(' + G + ',.8)'; ctx.shadowBlur = 6 * p; ctx.fill(); ctx.shadowBlur = 0; }
+    });
+    if (!reduce) requestAnimationFrame(draw);
+  }
+  requestAnimationFrame(draw);
+  if (reduce) addEventListener('scroll', function () { requestAnimationFrame(draw); }, { passive: true });
+})();
+</script>
+
+</body>
+</html>
