@@ -7,7 +7,7 @@
 <meta property="og:description" content="Industrial engineer, human factors researcher and English & Spanish teacher. From El Salvador to Indonesia.">
 <meta property="og:image" content="https://susanaromerob.github.io/photo.jpg">
 <meta property="og:url" content="https://susanaromerob.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23e07b24'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='bold' font-size='16' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ccircle cx='16' cy='16' r='15' fill='%23c13a67'/%3E%3Ctext x='16' y='22' font-family='Arial' font-weight='bold' font-size='16' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
 <title>Susana Romero Benitez</title>
 <meta name="description" content="Susana Merary Romero Benitez: industrial engineer and researcher in human factors and occupational safety, and English and Spanish educator. From El Salvador to Indonesia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,14 +20,14 @@
 :root {
   color-scheme: light;
   --abyss: #f3fafd; --deep: #9fd3ea; --shallow: #f8dcb4;
-  --glow: #1d7fae; --sun: #e07b24; --coral: #e2574c;
+  --glow: #1d7fae; --sun: #c13a67; --coral: #d9668c;
   --foam: #17344a; --mist: #4d6577;
   --card: rgba(255, 255, 255, .8); --card-line: rgba(29, 127, 174, .2);
   --font-display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
   --font-body: "Figtree", "Segoe UI", system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
   --sea: #fde3c2;
-  --glow-rgb: 29, 127, 174; --mist-rgb: 77, 101, 119; --foam-rgb: 23, 52, 74; --sun-rgb: 224, 123, 36; --coral-rgb: 226, 87, 76;
+  --glow-rgb: 29, 127, 174; --mist-rgb: 77, 101, 119; --foam-rgb: 23, 52, 74; --sun-rgb: 193, 58, 103; --coral-rgb: 217, 102, 140;
   --card-rgb: 255, 255, 255; --line-rgb: 29, 127, 174; --abyss-rgb: 243, 250, 253; --ray-rgb: 255, 214, 150;
   --sea-top: 253, 224, 186; --sea-bot: 196, 232, 248; --on-sun: #ffffff; --fx: bubbles;
 }
@@ -95,6 +95,22 @@ p { margin: 0; }
 .porthole svg { position: absolute; inset: 0; width: 100%; height: 100%; }
 .porthole .spin { transform-origin: 50% 50%; animation: spin 40s linear infinite; }
 @keyframes spin { to { transform: rotate(360deg); } }
+.porthole img { z-index: 2; box-shadow: 0 0 0 5px rgba(255,255,255,.9), 0 18px 44px rgba(var(--glow-rgb), .22); }
+.ring { position: absolute; border-radius: 50%; pointer-events: none; }
+.ring-halo { inset: 3.5%; background: conic-gradient(from 0deg, rgba(var(--sun-rgb), .95), rgba(var(--glow-rgb), .35) 35%, rgba(var(--sun-rgb), 0) 62%, rgba(var(--glow-rgb), .35) 80%, rgba(var(--sun-rgb), .95));
+  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px)); mask: radial-gradient(farthest-side, transparent calc(100% - 4px), #000 calc(100% - 3px)); animation: spin 16s linear infinite; }
+.ring-glow { inset: 6%; background: radial-gradient(closest-side, rgba(var(--sun-rgb), .18), rgba(var(--sun-rgb), 0) 100%); transform: scale(1.18); }
+.ring-ripple { inset: 9%; border: 2px solid rgba(var(--sun-rgb), .6); animation: ripple 7.5s cubic-bezier(.2,.6,.3,1) infinite; opacity: 0; }
+.ring-ripple:nth-of-type(2) { animation-delay: 2.5s; } .ring-ripple:nth-of-type(3) { animation-delay: 5s; }
+.ring-still { inset: 5.5%; border: 1.5px solid rgba(var(--sun-rgb), .45); }
+@keyframes ripple { 0% { transform: scale(1); opacity: .8; } 100% { transform: scale(1.2); opacity: 0; } }
+.ring-back { inset: 9%; background: linear-gradient(135deg, rgba(var(--sun-rgb), .22), rgba(var(--glow-rgb), .14)); transform: translate(-6%, -5%); }
+.ring-line { inset: 9%; border: 2px solid var(--sun); transform: translate(6%, 5%); }
+.porthole.float img, .porthole.float .ring { animation: bob 7s ease-in-out infinite alternate; }
+.porthole.float .ring-back { animation-delay: -2s; } .porthole.float .ring-line { animation-delay: -4s; }
+@keyframes bob { from { translate: 0 -5px; } to { translate: 0 6px; } }
+@media (prefers-reduced-motion: reduce) { .ring, .porthole.float img { animation: none !important; } .ring-ripple { opacity: .5; } }
+
 .cue { position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%); display: grid; justify-items: center; gap: .4rem; color: var(--mist); text-decoration: none; }
 .cue i { width: 1.4rem; height: 2.2rem; border: 1.5px solid var(--mist); border-radius: 1rem; position: relative; }
 .cue i::after { content: ""; position: absolute; left: 50%; top: .4rem; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--sun); animation: drop 1.8s ease-in-out infinite; }
@@ -296,16 +312,7 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
         </div>
       </div>
       <div class="porthole rv zoom d2">
-        <svg viewBox="0 0 200 200" aria-hidden="true">
-          <circle cx="100" cy="100" r="96" fill="none" style="stroke:var(--glow)" stroke-opacity=".35" stroke-width="1"/>
-          <g class="spin">
-            <circle cx="100" cy="100" r="90" fill="none" style="stroke:var(--sun)" stroke-width="2" stroke-dasharray="2 10" stroke-linecap="round"/>
-          </g>
-          <circle cx="100" cy="4" r="3.5" style="fill:var(--sun)"/>
-          <circle cx="196" cy="100" r="3.5" style="fill:var(--glow)"/>
-          <circle cx="100" cy="196" r="3.5" style="fill:var(--glow)"/>
-          <circle cx="4" cy="100" r="3.5" style="fill:var(--glow)"/>
-        </svg>
+        <div class="ring ring-still" aria-hidden="true"></div><div class="ring ring-ripple" aria-hidden="true"></div><div class="ring ring-ripple" aria-hidden="true"></div><div class="ring ring-ripple" aria-hidden="true"></div>
         <img src="photo.jpg" alt="Portrait of Susana Romero Benitez" width="720" height="720">
       </div>
     </div>
@@ -644,7 +651,7 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
   var cv = document.getElementById('fx'), ctx = cv.getContext('2d'), W, H, dpr;
   function size() { dpr = Math.min(2, devicePixelRatio || 1); W = innerWidth; H = innerHeight; cv.width = W * dpr; cv.height = H * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); }
   size(); addEventListener('resize', size);
-  var N = W < 700 ? 14 : 34, parts = [];
+  var N = FX === 'bubbles' ? (W < 700 ? 10 : 22) : (W < 700 ? 14 : 34), parts = [];
   for (var i = 0; i < N; i++) parts.push({ x: Math.random() * W, y: Math.random() * H, r: Math.random() * 2.6 + .6, s: Math.random() * .5 + .15, w: Math.random() * Math.PI * 2, b: Math.random() < .35, f: Math.random() < .28 });
   function draw(t) {
     ctx.clearRect(0, 0, W, H);
@@ -684,6 +691,15 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
         var a = .35 + .55 * Math.abs(Math.sin(t / 900 + q.w * 3));
         ctx.beginPath(); ctx.arc(q.x, q.y, q.r * .9, 0, Math.PI * 2); ctx.fillStyle = 'rgba(' + SUN + ',' + a + ')';
         ctx.shadowColor = 'rgba(' + SUN + ',.9)'; ctx.shadowBlur = 10; ctx.fill(); ctx.shadowBlur = 0; return;
+      }
+      if (FX === 'bubbles') {
+        if (!reduce) { q.y -= q.s * .7; q.w += .008; if (q.y < -20) { q.y = H + 20; q.x = Math.random() * W; } }
+        var bx = q.x + Math.sin(q.w) * 10, br = 2 + q.r * 2.2;
+        ctx.beginPath(); ctx.arc(bx, q.y, br, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,255,255,.18)'; ctx.fill();
+        ctx.strokeStyle = 'rgba(' + G + ',.28)'; ctx.lineWidth = 1; ctx.stroke();
+        ctx.beginPath(); ctx.arc(bx - br * .35, q.y - br * .35, br * .28, 0, Math.PI * 2); ctx.fillStyle = 'rgba(255,255,255,.55)'; ctx.fill();
+        return;
       }
       if (!reduce) { q.y -= q.s; q.w += .01; if (q.y < -10) { q.y = H + 10; q.x = Math.random() * W; } }
       var x = q.x + Math.sin(q.w) * 8;
