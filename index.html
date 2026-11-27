@@ -160,6 +160,8 @@ p { margin: 0; }
   .moments > .m:nth-child(odd) { grid-column: 1; }
   .moments > .m:nth-child(even) { grid-column: 2; margin-top: 4rem; }
   .moments > .wide { grid-column: 1 / -1 !important; margin-top: 0 !important; }
+.moments > .m { align-content: start; }
+#culture .moments > .m { align-self: start; }
 }
 .m { background: var(--card); border: 1px solid var(--card-line); border-radius: 16px; padding: 1.4rem 1.5rem; backdrop-filter: blur(6px); display: grid; gap: .6rem; min-width: 0; }
 .m .when { font-family: var(--font-mono); font-size: .8rem; color: var(--sun); font-variant-numeric: tabular-nums; letter-spacing: .04em; }
@@ -300,6 +302,22 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
 .m-photo.slides img { position: absolute; inset: 0; height: 100%; border-radius: 0; box-shadow: none; }
 .m-photo.slides.wide-shot { aspect-ratio: 1122 / 587; }
 .m-photo.slides.four3 { aspect-ratio: 4 / 3; }
+.room a.ph.pic { cursor: pointer; }
+.ig { margin-top: 1rem; display: grid; gap: 1rem; }
+.ig-left { display: grid; gap: 1rem; }
+.ig-left p { margin: 0; }
+.ig-stats { display: grid; grid-template-columns: 1fr 1fr; gap: .6rem; }
+.ig-stats div { padding: .7rem .8rem; border-radius: 12px; background: rgba(var(--glow-rgb), .08); border: 1px solid rgba(var(--glow-rgb), .2); display: grid; gap: .1rem; }
+.ig-stats b { font-family: var(--font-display); font-size: 1.5rem; line-height: 1.1; color: var(--sun); }
+.ig-stats span { font-size: .82rem; color: var(--mist); }
+.ig-shots { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
+.ig-shots a { display: grid; gap: .4rem; text-decoration: none; color: var(--mist); font-size: .82rem; }
+.ig-shots img { width: 100%; height: auto; border-radius: 14px; box-shadow: 0 8px 22px rgba(var(--glow-rgb), .14); }
+@media (min-width: 900px) {
+  .ig-wide { grid-template-columns: 1fr 1.1fr; align-items: start; column-gap: 2.5rem; }
+  .ig-wide .ig-shots { max-width: 520px; justify-self: center; }
+}
+
 .room .ph.slides { display: block; overflow: hidden; background: var(--shallow); }
 .room .ph.slides::after { display: none; }
 .slides img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity .7s ease; }
@@ -312,6 +330,8 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
 .slides .prev { left: 8px; } .slides .next { right: 8px; }
 .room .ph.pic { display: block; overflow: hidden; } .room .ph.pic::after { display: none; }
 .room .ph.pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.room .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px 4px 0; }
+.room .thumbs img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; }
 </style>
 <style>[hidden]{display:none!important} img{max-width:100%} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
@@ -567,6 +587,7 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
               <div class="rooms" style="margin-top:.4rem">
                 <div class="room"><div class="ph slides" data-slides><img src="dress-2.jpg" alt="Susana in the traditional Salvadoran dress with friends wearing Honduran and Central American clothing" width="1200" height="900" loading="lazy" class="on"><img src="lombok-4.jpg" alt="Susana in the traditional Salvadoran dress with fellow volunteers at a cultural night in Lombok" width="1200" height="900" loading="lazy"><img src="dress-3.jpg" alt="Susana in the traditional Salvadoran dress at a singing competition for Indonesian-language learners in East Java" width="1200" height="900" loading="lazy"><button type="button" class="arw prev" aria-label="Previous photo">‹</button><button type="button" class="arw next" aria-label="Next photo">›</button><div class="dots"><button type="button" aria-label="Photo 1 of 3" aria-current="true"></button><button type="button" aria-label="Photo 2 of 3"></button><button type="button" aria-label="Photo 3 of 3"></button></div></div><div class="txt"><strong>In the Salvadoran dress</strong></div></div>
                 <div class="room"><div class="ph pic"><img src="presenting-sv.jpg" alt="Susana holding the flag of El Salvador with a class of Indonesian students" width="1200" height="900" loading="lazy"></div><div class="txt"><strong>Presenting El Salvador</strong></div></div>
+                <div class="room"><div class="ph pic"><img src="darmaria.jpg" alt="Two moments at the Darmaria Girls School: Susana in the Salvadoran dress showing a colourful bull piñata to the girls, and dancing with them while a girl carries the piñata on her head" width="1200" height="900" loading="lazy"></div><div class="thumbs"><img src="darmaria-2.jpg" alt="Susana with a girl eating a Salvadoran snack, both holding a small El Salvador card" width="600" height="600" loading="lazy"><img src="darmaria-3.jpg" alt="Susana with the whole group of girls, one wearing the bull piñata as a hat" width="600" height="600" loading="lazy"><img src="darmaria-4.jpg" alt="Susana and a smiling girl in a green dress holding an El Salvador card" width="600" height="600" loading="lazy"></div><div class="txt"><strong>Sharing with the girls of the Darmaria Girls School, Indonesia</strong><span>A session about my country, El Salvador, where I also shared traditional food: enchiladas and empanadas de leche.</span><span class="n">April 2026</span></div></div>
               </div>
             </article>
             <article class="m rv d1">
@@ -574,8 +595,20 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
               <h3>Sharing my life in Indonesia</h3>
               <p>On social media I share my student life, my everyday life in Indonesia and the people and places I discover, so that friends back home and around the world can see Indonesia through my eyes. With ESPAÑOLINDO, I also make content that teaches Spanish to Indonesians.</p>
               <div class="rooms" style="margin-top:.4rem">
-                <div class="room"><div class="ph">Photo coming soon</div><div class="txt"><strong>Student life</strong></div></div>
+                <div class="room"><a class="ph pic" href="https://www.instagram.com/zusiromero/" aria-label="Open Susana's Instagram profile"><img src="ig-grid.jpg" alt="Susana's Instagram grid: reels about batik, Kartini, culture shocks and life in Indonesia, with their view counts" width="1200" height="900" loading="lazy"></a><div class="txt"><strong>On my Instagram</strong><span>Reels in Spanish about Indonesia</span><span class="n">@zusiromero</span></div></div>
                 <div class="room"><div class="ph pic"><img src="batik.jpg" alt="Susana smiling and holding up a hand-drawn batik cloth in an art studio" width="1200" height="900" loading="lazy"></div><div class="txt"><strong>Everyday Indonesia</strong><span>Making batik</span><span class="n">Photo © Baarik L. Fadli</span></div></div>
+              </div>
+              <div class="ig">
+                <div class="ig-stats">
+                  <div><b>198K</b><span>views on my most-watched reel</span></div>
+                  <div><b>18.7K</b><span>likes on that reel</span></div>
+                  <div><b>1,680</b><span>Instagram followers</span></div>
+                  <div><b>9K</b><span>views in the last 30 days</span></div>
+                </div>
+                <div class="ig-shots">
+                  <a href="https://www.instagram.com/zusiromero/"><img src="ig-reel-1.jpg" alt="Instagram reel 'Choques culturales de Latinas en Indonesia' with 198 thousand views and 18.7 thousand likes" width="600" height="1217" loading="lazy"><span>Culture shocks of Latinas in Indonesia · 198K views</span></a>
+                  <a href="https://www.instagram.com/zusiromero/"><img src="ig-reel-2.jpg" alt="Instagram reel '¿Indonesia? ¿dónde queda eso?' with 12.3 thousand views" width="600" height="1217" loading="lazy"><span>"Indonesia? Where is that?" · 12.3K views</span></a>
+                </div>
               </div>
               <div class="social">
                 <a href="https://www.instagram.com/zusiromero/"><span class="k">Instagram</span>@zusiromero</a>
@@ -583,6 +616,7 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
                 <a href="https://www.youtube.com/@susiromerosv"><span class="k">YouTube</span>@susiromerosv</a>
               </div>
             </article>
+
           </div>
         </div>
       </section>
@@ -608,7 +642,7 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
               <div class="m rv"><h3>Research methods</h3><div class="chips"><span>Field observation</span><span>Interviews</span><span>Surveys</span><span>Human-centred design</span><span>Requirements &amp; traceability</span><span>Warning allocation</span><span>House of Quality</span><span>FMEA</span><span>Hazard analysis</span></div></div>
               <div class="m rv d1"><h3>Human factors</h3><div class="chips"><span>Task analysis (HTA)</span><span>SHERPA</span><span>SAGAT</span><span>NASA-TLX</span><span>Usability testing</span><span>Accessibility</span><span>Eye tracking</span></div></div>
               <div class="m rv d2"><h3>Teaching</h3><div class="chips"><span>Conversation practice</span><span>Lesson design</span><span>Teaching on Zoom</span><span>Group facilitation</span><span>Cross-cultural communication</span></div></div>
-              <div class="m rv d3"><h3>Tools</h3><div class="chips"><span>Figma</span><span>Gazepoint</span><span>Microsoft Office</span><span>Root-cause analysis</span><span>DMAIC</span><span>Process mapping</span></div></div>
+              <div class="m rv d3"><h3>Tools</h3><div class="chips"><span>Figma</span><span>Canva</span><span>CapCut</span><span>Edits</span><span>Gazepoint</span><span>Microsoft Office</span><span>Root-cause analysis</span><span>DMAIC</span><span>Process mapping</span></div></div>
             </div>
           </div>
         </div>
