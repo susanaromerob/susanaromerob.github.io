@@ -335,7 +335,13 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
 .thesis-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: .8rem; margin: 1rem 0; }
 .thesis-photos figure { margin: 0; display: grid; gap: .35rem; }
 .thesis-photos img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 22px rgba(var(--glow-rgb), .14); }
+.m-photo .cap { font-size: .85rem; color: var(--mist); margin-top: .35rem; }
 .thesis-photos figcaption { font-size: .85rem; color: var(--mist); }
+.tutor-media { display: grid; grid-template-columns: 1fr .392fr .392fr .392fr; gap: .6rem; align-items: start; margin-top: .9rem; }
+.tutor-media .m-photo { margin: 0; }
+.tutor-media .esp-v { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 22px rgba(var(--glow-rgb), .14); }
+.tutor-cap { font-size: .85rem; color: var(--mist); margin-top: .5rem; }
+@media (max-width: 760px) { .tutor-media { grid-template-columns: repeat(3, 1fr); } .tutor-media .m-photo { grid-column: 1 / -1; } }
 </style>
 <style>[hidden]{display:none!important} img{max-width:100%} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
@@ -552,7 +558,7 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
           <header class="chead">
             <div class="mono rv"><b>Chapter 4</b> · 2024 – today · Classrooms</div>
             <h2 class="rv d1">Giving back in the classroom</h2>
-            <p class="rv d2">From children in Kediri to university students in Surabaya, I volunteered to help over 135 learners speak English with confidence.</p>
+            <p class="rv d2">From 2024 to 2025, from children in Kediri to university students in Surabaya, I volunteered to help over 135 learners speak English with confidence. I led speaking practice and cultural exchange, often with materials and activities I prepared myself, so that shy students would raise their hands and try.</p>
           </header>
           <div class="moments">
             <div class="wide rv">
@@ -565,16 +571,17 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
                 <div class="room"><div class="ph slides" data-slides><img src="hangtuah-1.jpg" alt="Susana with a large group of Universitas Hang Tuah students in a classroom" width="1200" height="900" loading="lazy" class="on"><img src="hangtuah-2.jpg" alt="Susana with two students in a classroom at Universitas Hang Tuah" width="1200" height="900" loading="lazy"><button type="button" class="arw prev" aria-label="Previous photo">‹</button><button type="button" class="arw next" aria-label="Next photo">›</button><div class="dots"><button type="button" aria-label="Photo 1 of 2" aria-current="true"></button><button type="button" aria-label="Photo 2 of 2"></button></div></div><div class="txt"><strong>Universitas Hang Tuah</strong><span>Surabaya</span><span class="n">About 30 students</span></div></div>
               </div>
             </div>
-            <article class="m rv left">
-              <div class="when">2024 – 2025 · Volunteer</div>
-              <h3>English teacher and speaking facilitator</h3>
-              <p>I led speaking practice, cultural exchange and activities I prepared myself, so that shy students would raise their hands and try.</p>
-            </article>
-            <article class="m rv d1">
+            <article class="m wide rv tutor">
               <div class="when">2024 – today · ESPAÑOLINDO</div>
               <h3>Spanish tutor for Indonesian students</h3>
-              <p>Online lessons on Zoom for groups of around ten and one-to-one sessions. I explain Spanish grammar, pronunciation and everyday expressions in English, with materials I make myself. I also create Spanish-learning content for ESPAÑOLINDO that helps Indonesians learn the language.</p>
-              <figure class="m-photo slides wide-shot" data-slides><img src="espanolindo-class.jpg" alt="An online ESPAÑOLINDO Spanish class on Zoom: Susana's slide 'Hoy aprenderemos / Hari ini kita pelajari' with Spanish verbs and their Indonesian meanings" width="1122" height="587" loading="lazy" class="on"><img src="espanolindo-class-2.jpg" alt="An online ESPAÑOLINDO Spanish class on Zoom: Susana teaching when to use the verb 'ser', with illustrated examples" width="1122" height="587" loading="lazy"><button type="button" class="arw prev" aria-label="Previous photo">‹</button><button type="button" class="arw next" aria-label="Next photo">›</button><div class="dots"><button type="button" aria-label="Photo 1 of 2" aria-current="true"></button><button type="button" aria-label="Photo 2 of 2"></button></div></figure>
+              <p>Online lessons on Zoom for groups of around ten and one-to-one sessions. I explain Spanish grammar, pronunciation and everyday expressions in English and Indonesian, with materials I make myself. I also plan, present and record short Spanish lessons, explained in Indonesian, for ESPAÑOLINDO's social media, which the team then edits and publishes.</p>
+              <div class="tutor-media">
+                <figure class="m-photo slides wide-shot" data-slides><img src="espanolindo-class.jpg" alt="An online ESPAÑOLINDO Spanish class on Zoom: Susana's slide 'Hoy aprenderemos / Hari ini kita pelajari' with Spanish verbs and their Indonesian meanings" width="1122" height="587" loading="lazy" class="on"><img src="espanolindo-class-2.jpg" alt="An online ESPAÑOLINDO Spanish class on Zoom: Susana teaching when to use the verb 'ser', with illustrated examples" width="1122" height="587" loading="lazy"><button type="button" class="arw prev" aria-label="Previous photo">‹</button><button type="button" class="arw next" aria-label="Next photo">›</button><div class="dots"><button type="button" aria-label="Photo 1 of 2" aria-current="true"></button><button type="button" aria-label="Photo 2 of 2"></button></div></figure>
+                <img class="esp-v" src="esp-v1.jpg" alt="ESPAÑOLINDO video 'Mirip Bahasa Indonesia?' with 1,181 plays" width="450" height="600" loading="lazy">
+                <img class="esp-v" src="esp-v2.jpg" alt="ESPAÑOLINDO video 'Cara bilang GAS! di negara-negara hispanik' with 672 plays" width="450" height="600" loading="lazy">
+                <img class="esp-v" src="esp-v3.jpg" alt="ESPAÑOLINDO video 'Alternatif bilang Selamat Pagi di bahasa Spanyol' with 1,211 plays" width="450" height="600" loading="lazy">
+              </div>
+              <p class="tutor-cap">My Zoom classes, and short Spanish lessons I present for ESPAÑOLINDO.</p>
             </article>
           </div>
         </div>
