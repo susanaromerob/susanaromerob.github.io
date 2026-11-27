@@ -332,6 +332,10 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
 .room .ph.pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .room .thumbs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; padding: 4px 4px 0; }
 .room .thumbs img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; border-radius: 6px; }
+.thesis-photos { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: .8rem; margin: 1rem 0; }
+.thesis-photos figure { margin: 0; display: grid; gap: .35rem; }
+.thesis-photos img { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; object-fit: cover; border-radius: 12px; box-shadow: 0 8px 22px rgba(var(--glow-rgb), .14); }
+.thesis-photos figcaption { font-size: .85rem; color: var(--mist); }
 </style>
 <style>[hidden]{display:none!important} img{max-width:100%} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}</style>
 </head>
@@ -507,6 +511,11 @@ footer { text-align: center; color: var(--mist); font-size: .85rem; padding-bloc
                 <li>Decided who gets which warning: a simple visual cue for the diver, and detailed status, a beeper and manual alarm for the attendant on the boat.</li>
                 <li>Used House of Quality, FMEA, decision matrices and traceability, and appraised the prototype built with the engineering firm Elmech.</li>
               </ul>
+              <div class="thesis-photos">
+                <figure><img src="thesis-field-1.jpg" alt="Susana listening to artisanal fishermen and divers sitting on the sea wall at Kenjeran Beach" width="1280" height="720" loading="lazy"><figcaption>Listening to the fishermen at Kenjeran</figcaption></figure>
+                <figure><img src="thesis-field-2.jpg" alt="Susana with two research teammates on the shell-covered beach at Kenjeran, with fishing boats behind them" width="1280" height="720" loading="lazy"><figcaption>Fieldwork with the team</figcaption></figure>
+                <figure><img src="thesis-elmech.jpg" alt="Susana and the team at Elmech holding the safety-support prototype devices" width="1280" height="720" loading="lazy"><figcaption>Reviewing the prototype at Elmech</figcaption></figure>
+              </div>
               <p class="learned"><b>What drives me</b>Technology should help people notice danger early and decide well, especially when an AI or a machine is giving advice.</p>
             </article>
             <article class="m rv left">
